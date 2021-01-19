@@ -1,0 +1,16 @@
+{
+  "name": "photogram",
+  "version": "1.0.0",
+  "description": "Share your photos with photogram",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "photogram",
+    "javscript",
+    "materialize"
+  ],
+  "author": "Jeferson Sanabria (jeffersonmx@outlook.com)",
+  "license": "MIT"
+}
