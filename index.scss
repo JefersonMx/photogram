@@ -1,0 +1,65 @@
+@import "node_modules/materialize-css/sass/materialize.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+$secondary-color:#264653;
+
+:root {
+    --first-color: #264653;
+    --second-color: #2A9D8F;
+    --third-color: #E9C46A;
+    --fourth-color: #F4A261;
+    --fiveth-color: #E76F51;
+    --sixth-color: #FFFFFF;
+    --seventh-color:  #FAFAFA;
+    --eight-color: #2851A3;
+    --nineth-color: #3c65b6;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: var(--seventh-color);
+    font-family: 'Roboto', sans-serif;
+    color: var(--first-color);
+}
+#main-container {
+    margin: 30px auto;
+}
+.iphone {
+    max-width: 100%;
+}
+.site-footer {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.login-box, .signup-box {
+    background-color: var(--sixth-color);
+    border: 1px solid  var(--sixth-color);
+    box-shadow: 0 0 1px rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 10px 0;
+    text-align: center;
+}
+.signup-box .photogram {
+    font-family: 'Pacifico', cursive;
+}
+.signup-form {
+    width: 65%;
+    margin: 0 auto;
+}
+.signup-form h2 {
+    font-size: 1.2em;
+}
+.signup-form .btn.btn-fb {
+    background: var(--eight-color);
+    font-size: .9em;
+}
+.signup-form .btn.btn-fb:hover,.btn.btn.btn-signup:hover {
+    background: var(--nineth-color);
+}
+.signup-form  .btn.btn-signup {
+    background: var(--eight-color);
+}
