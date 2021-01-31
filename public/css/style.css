@@ -6566,7 +6566,7 @@ body {
   padding: 10px 0;
   text-align: center; }
 
-.signup-box .photogram {
+.photogram {
   font-family: 'Pacifico', cursive; }
 
 .signup-form {
@@ -6578,7 +6578,7 @@ body {
 
 .signup-form .btn.btn-fb, .signup-form .btn-fb.btn-large, .signup-form .btn-fb.btn-small {
   background: var(--eight-color);
-  font-size: .9em; }
+  font-size: 1em; }
 
 .signup-form .btn.btn-fb:hover, .signup-form .btn-fb.btn-large:hover, .signup-form .btn-fb.btn-small:hover, .btn.btn.btn-signup:hover, .btn-signup.btn-large:hover, .btn-signup.btn-small:hover {
   background: var(--nineth-color); }

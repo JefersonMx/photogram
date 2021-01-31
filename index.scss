@@ -43,7 +43,7 @@ body {
     padding: 10px 0;
     text-align: center;
 }
-.signup-box .photogram {
+ .photogram {
     font-family: 'Pacifico', cursive;
 }
 .signup-form {
@@ -55,7 +55,7 @@ body {
 }
 .signup-form .btn.btn-fb {
     background: var(--eight-color);
-    font-size: .9em;
+    font-size: 1em;
 }
 .signup-form .btn.btn-fb:hover,.btn.btn.btn-signup:hover {
     background: var(--nineth-color);
