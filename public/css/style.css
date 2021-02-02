@@ -6619,5 +6619,15 @@ body {
 .card i {
   font-size: 30px; }
 
-.card .fa-heart {
+.card .far.fa-heart {
   color: #264653; }
+
+.card .fas.fa-heart {
+  color: #f44336;
+  display: none; }
+
+.card.liked .fas.fa-heart {
+  display: block; }
+
+.card.liked .far.fa-heart {
+  display: none; }

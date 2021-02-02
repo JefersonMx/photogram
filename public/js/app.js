@@ -2912,23 +2912,39 @@ module.exports = [
 },{}],15:[function(require,module,exports){
 var yo = require('yo-yo');
 
-module.exports = function (pic) {
-  return yo`<div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="${pic.url}">
-        </div>
-        <div class="card-content">
-        <a href="/user/${pic.user.username}" class="card-title">
-            <img src="${pic.user.avatar}" class="avatar"/>
-            <span class="username">${pic.user.username}</span>
-        </a>
-       <small class="right time">Hace 1 mes</small>
-       <p>
-        <a class="left" href="#"><i class="far fa-heart"></i></a>
-        <span clasS="left likes">${pic.likes}</span>
-       </p>
-        </div>
-    </div>`;
+module.exports = function pictureCard(pic) {
+  var el;
+
+  function render(picture) {
+    return yo`<div class="card ${picture.liked ? 'liked' : ''}">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="${picture.url}">
+            </div>
+            <div class="card-content">
+                <a href="/user/${picture.user.username}" class="card-title">
+                    <img src="${picture.user.avatar}" class="avatar"/>
+                    <span class="username">${picture.user.username}</span>
+                </a>
+                <small class="right time">Hace 1 mes</small>
+                <p>
+                    <a class="left" href="#" onclick=${like.bind(null, true)}><i class="far fa-heart"></i></a>
+                    <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fas fa-heart"></i></a>
+                    <span clasS="left likes">${picture.likes} likes</span>
+                </p>
+            </div>
+        </div>`;
+  }
+
+  function like(liked) {
+    pic.liked = liked;
+    pic.likes += liked ? 1 : -1;
+    var newEle = render(pic);
+    yo.update(el, newEle);
+    return false;
+  }
+
+  el = render(pic);
+  return el;
 };
 
 },{"yo-yo":13}],16:[function(require,module,exports){
@@ -2948,7 +2964,7 @@ page('/', (context, next) => {
     },
     url: 'https://cdn.discordapp.com/attachments/329445618026283008/805616282643988510/91fdc421f4e72b24962840e22f99871b.png',
     likes: 8900,
-    liked: true
+    liked: false
   }, {
     user: {
       username: 'Jair',

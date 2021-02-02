@@ -97,6 +97,18 @@ body {
 .card i {
     font-size: 30px;
 }
-.card .fa-heart {
+.card .far.fa-heart {
     color : $secondary-color;
+}
+.card .fas.fa-heart {
+    color: #f44336;
+    display: none;
+}
+.card.liked {
+    .fas.fa-heart {
+        display: block;
+    }
+    .far.fa-heart {
+        display: none;
+    }
 }

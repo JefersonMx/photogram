@@ -14,7 +14,7 @@ page('/', (context, next) => {
           },
           url: 'https://cdn.discordapp.com/attachments/329445618026283008/805616282643988510/91fdc421f4e72b24962840e22f99871b.png',
           likes: 8900,
-          liked: true
+          liked: false
         },
         {
             user: {
