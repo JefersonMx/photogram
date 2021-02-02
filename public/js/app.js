@@ -2910,6 +2910,28 @@ module.exports = [
 ]
 
 },{}],15:[function(require,module,exports){
+var yo = require('yo-yo');
+
+module.exports = function (pic) {
+  return yo`<div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="${pic.url}">
+        </div>
+        <div class="card-content">
+        <a href="/user/${pic.user.username}" class="card-title">
+            <img src="${pic.user.avatar}" class="avatar"/>
+            <span class="username">${pic.user.username}</span>
+        </a>
+       <small class="right time">Hace 1 mes</small>
+       <p>
+        <a class="left" href="#"><i class="far fa-heart"></i></a>
+        <span clasS="left likes">${pic.likes}</span>
+       </p>
+        </div>
+    </div>`;
+};
+
+},{"yo-yo":13}],16:[function(require,module,exports){
 var page = require('page');
 
 var empty = require('empty-element');
@@ -2919,38 +2941,59 @@ var template = require('./template');
 page('/', (context, next) => {
   document.title = 'Photogram';
   var main = document.getElementById('main-container');
-  empty(main).appendChild(template);
+  var pictures = [{
+    user: {
+      username: 'Jeferson',
+      avatar: 'https://cdn.discordapp.com/attachments/329445618026283008/805616282643988510/91fdc421f4e72b24962840e22f99871b.png'
+    },
+    url: 'https://cdn.discordapp.com/attachments/329445618026283008/805616282643988510/91fdc421f4e72b24962840e22f99871b.png',
+    likes: 8900,
+    liked: true
+  }, {
+    user: {
+      username: 'Jair',
+      avatar: 'https://images.unsplash.com/photo-1611756674996-fc1b1ed07c9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
+    },
+    url: 'https://cdn.discordapp.com/attachments/329445618026283008/805614769628643348/Screenshot_20210109-120023.png',
+    likes: 222,
+    liked: true
+  }, {
+    user: {
+      username: 'Andrés',
+      avatar: 'https://images.unsplash.com/photo-1610767540673-4ae1befdb182?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
+    },
+    url: 'https://scontent-bog1-1.xx.fbcdn.net/v/t1.0-9/15442299_1092783377505879_3385059318414204374_n.jpg?_nc_cat=106&ccb=2&_nc_sid=174925&_nc_eui2=AeHMvdMdgtgBUVoPIuQZM-yL2PS4QYsjnwrY9LhBiyOfCulGqxoCTieHbxm8mYDWtUZflovtbkOV4nFXJrB9LPWz&_nc_ohc=LiGD_3T3N6oAX8TIbgW&_nc_ht=scontent-bog1-1.xx&oh=5c1735bd3213131a215836d7d729aa56&oe=603E4792',
+    likes: 1,
+    liked: true
+  }];
+  empty(main).appendChild(template(pictures));
 });
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.dropdown-trigger');
   var instances = M.Dropdown.init(elems);
 });
 
-},{"./template":16,"empty-element":3,"page":11}],16:[function(require,module,exports){
+},{"./template":17,"empty-element":3,"page":11}],17:[function(require,module,exports){
 var yo = require('yo-yo');
 
-var template = yo`<nav class="header">
-    <div class="nav-wrapper">
-        <div class="container">
-            <div clas="row">
-             <div class="col s12 m6">
-                    <a href="/" class="brand-logo photogram col s12 m6">Photogram</a>
-                </div>
-                <div class="col s2 m6 push-m10 right-align">
-                    <a  class="dropdown-trigger btn btn-large btn-flat" href="#" data-target="dropdown-user">
-                        <i class="fa fa-user"></i>
-                    </a>
-                    <ul id="dropdown-user" class="dropdown-content">
-                        <li><a href="#!">Sign out</a></li>
-                    </ul>
+var layout = require('../layout');
+
+var picture = require('../cards');
+
+module.exports = function (pictures) {
+  var el = yo`<div class="container timeline">
+            <div class="row">
+                <div class="col s12 m10 offset-m1 l6 offset-l3">
+                    ${pictures.map(function (pic) {
+    return picture(pic);
+  })}
                 </div>
             </div>
-        </div>
-    </div>
-</nav>`;
-module.exports = template;
+        </div>`;
+  return layout(el);
+};
 
-},{"yo-yo":13}],17:[function(require,module,exports){
+},{"../cards":15,"../layout":20,"yo-yo":13}],18:[function(require,module,exports){
 var page = require('page');
 
 require('./homepage');
@@ -2961,12 +3004,12 @@ require('./signin');
 
 page();
 
-},{"./homepage":15,"./signin":19,"./signup":21,"page":11}],18:[function(require,module,exports){
+},{"./homepage":16,"./signin":21,"./signup":23,"page":11}],19:[function(require,module,exports){
 var yo = require('yo-yo');
 
 module.exports = function landing(box) {
   return yo`<div class="container">
-        <div class="row">
+        <div class="row landing">
             <div class="col s10 push-s1">
                 <div class="row">
                     <div class="col m5 hide-on-small-only">
@@ -2979,7 +3022,37 @@ module.exports = function landing(box) {
     </div>`;
 };
 
-},{"yo-yo":13}],19:[function(require,module,exports){
+},{"yo-yo":13}],20:[function(require,module,exports){
+var yo = require('yo-yo');
+
+module.exports = function layout(content) {
+  return yo`<div> 
+    <nav class="header">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <div clas="row">
+                    <div class="col s12 m6">
+                            <a href="/" class="brand-logo photogram col s12 m6">Photogram</a>
+                        </div>
+                        <div class="col s2 m6 push-s10 right-align">
+                            <a  class="dropdown-trigger btn btn-large btn-flat" href="#" data-target="dropdown-user">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            <ul id="dropdown-user" class="dropdown-content">
+                                <li><a href="#!">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            ${content}
+        </div>
+    </div>`;
+};
+
+},{"yo-yo":13}],21:[function(require,module,exports){
 var page = require('page');
 
 var empty = require('empty-element');
@@ -2992,7 +3065,7 @@ page('/signin', (context, next) => {
   empty(main).appendChild(template);
 });
 
-},{"./template":20,"empty-element":3,"page":11}],20:[function(require,module,exports){
+},{"./template":22,"empty-element":3,"page":11}],22:[function(require,module,exports){
 var yo = require('yo-yo');
 
 var landing = require('../landing');
@@ -3028,7 +3101,7 @@ var signinForm = yo`<div class="col s12 m7">
                     </div>`;
 module.exports = landing(signinForm);
 
-},{"../landing":18,"yo-yo":13}],21:[function(require,module,exports){
+},{"../landing":19,"yo-yo":13}],23:[function(require,module,exports){
 var page = require('page');
 
 var empty = require('empty-element');
@@ -3041,7 +3114,7 @@ page('/signup', (context, next) => {
   empty(main).appendChild(template);
 });
 
-},{"./template":22,"empty-element":3,"page":11}],22:[function(require,module,exports){
+},{"./template":24,"empty-element":3,"page":11}],24:[function(require,module,exports){
 var yo = require('yo-yo');
 
 var landing = require('../landing');
@@ -3080,4 +3153,4 @@ var signupForm = yo`<div class="col s12 m7">
                     </div>`;
 module.exports = landing(signupForm);
 
-},{"../landing":18,"yo-yo":13}]},{},[17]);
+},{"../landing":19,"yo-yo":13}]},{},[18]);

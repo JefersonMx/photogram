@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 $secondary-color:#264653;
-
+$avatar-dimen: 48px;
 :root {
     --first-color: #264653;
     --second-color: #2A9D8F;
@@ -25,9 +25,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--first-color);
 }
-#main-container {
-    margin: 30px auto;
-}
+
 .iphone {
     max-width: 100%;
 }
@@ -43,8 +41,15 @@ body {
     padding: 10px 0;
     text-align: center;
 }
- .photogram {
+#main-container {
+    margin-top: 0;
+}
+.landing {
+    margin: 30px auto;
+}
+ #main-container .photogram {
     font-family: 'Pacifico', cursive;
+    color: var(--first-color);
 }
 .signup-form {
     width: 65%;
@@ -62,4 +67,36 @@ body {
 }
 .signup-form  .btn.btn-signup {
     background: var(--eight-color);
+}
+.header {
+    background-color:  white;
+    color: var(--first-color);
+    box-shadow: none;
+    border-bottom: 1px solid #2A9D8F;
+}
+.timeline {
+    padding: 30px 0 ;
+}
+.avatar {
+    width: $avatar-dimen;
+    height: $avatar-dimen;
+    border-radius: 50%;
+    float: left;
+    margin-right: 12px;
+}
+.card small.time{
+    line-height: $avatar-dimen;
+}
+.card p {
+    padding:20px 0;
+}
+.card .likes {
+    line-height: 30px;
+    margin-left: 12px;
+}
+.card i {
+    font-size: 30px;
+}
+.card .fa-heart {
+    color : $secondary-color;
 }

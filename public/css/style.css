@@ -6548,9 +6548,6 @@ body {
   font-family: 'Roboto', sans-serif;
   color: var(--first-color); }
 
-#main-container {
-  margin: 30px auto; }
-
 .iphone {
   max-width: 100%; }
 
@@ -6566,8 +6563,15 @@ body {
   padding: 10px 0;
   text-align: center; }
 
-.photogram {
-  font-family: 'Pacifico', cursive; }
+#main-container {
+  margin-top: 0; }
+
+.landing {
+  margin: 30px auto; }
+
+#main-container .photogram {
+  font-family: 'Pacifico', cursive;
+  color: var(--first-color); }
 
 .signup-form {
   width: 65%;
@@ -6585,3 +6589,35 @@ body {
 
 .signup-form .btn.btn-signup, .signup-form .btn-signup.btn-large, .signup-form .btn-signup.btn-small {
   background: var(--eight-color); }
+
+.header {
+  background-color: white;
+  color: var(--first-color);
+  box-shadow: none;
+  border-bottom: 1px solid #2A9D8F; }
+
+.timeline {
+  padding: 30px 0; }
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px; }
+
+.card small.time {
+  line-height: 48px; }
+
+.card p {
+  padding: 20px 0; }
+
+.card .likes {
+  line-height: 30px;
+  margin-left: 12px; }
+
+.card i {
+  font-size: 30px; }
+
+.card .fa-heart {
+  color: #264653; }
