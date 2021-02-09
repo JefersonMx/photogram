@@ -1,25 +1,27 @@
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
-var request = require('superagent');
+var axios = require('axios').default;
 var headerMidlew = require('../header');
 
 
-page('/', headerMidlew, loadPictures, (context, next) => {
+page('/', headerMidlew, loadAxiosPictures, (context, next) => {
     document.title = 'Photogram';
     var main = document.getElementById('main-container');
 
     empty(main).appendChild(template(context.pictures));
 })
 
-function loadPictures(context, next){
-  request
-    .get('/api/pictures')
-    .end(function (err, res){
-      if(err) return console.log(err);
 
-      context.pictures = res.body;
+function loadAxiosPictures(context, next){
+  axios
+    .get('/api/pictures')
+    .then(function (response){
+      context.pictures = response.data;
       next();
+    })
+    .catch(function (error){
+      console.log(error)
     })
 }
 
