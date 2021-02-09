@@ -24,7 +24,6 @@ module.exports = function pictureCard(pic) {
             </div>
         </div>`;
      }
-
     function like(liked){
         pic.liked = liked;
         pic.likes += liked ? 1 : -1;
@@ -35,3 +34,4 @@ module.exports = function pictureCard(pic) {
     el = render(pic);
     return el;
 }
+

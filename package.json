@@ -27,6 +27,7 @@
     "nodemon": "^2.0.7",
     "page": "^1.11.6",
     "pug": "^3.0.0",
+    "superagent": "^6.1.0",
     "yo-yo": "^1.4.1"
   },
   "devDependencies": {
