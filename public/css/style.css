@@ -6631,3 +6631,33 @@ body {
 
 .card.liked .far.fa-heart {
   display: none; }
+
+.form-upload span, .form-upload button {
+  color: var(--sixth-color); }
+
+.form-upload .fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px; }
+  .form-upload .fileUpload input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    bottom: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  .form-upload .fileUpload i {
+    margin-right: 5px; }
+
+.form-upload .fileUpload:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
+
+button#btnUpload:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
+
+button#btnCancel:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }

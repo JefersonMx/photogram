@@ -21,8 +21,15 @@ gulp.task('assets', () => {
 })
 
 function compile(watch){
-    var bundle = watchify(browserify('./src/index.js'));
+    var bundle = browserify('./src/index.js');
 
+    if (watch) {
+        bundle = watchify(bundle);
+        bundle.on('update', () => {
+            console.log('---> Bundling... wait');
+            rebundle();
+        });
+    }
     function rebundle() {
         bundle
         .transform(babel)
@@ -32,16 +39,11 @@ function compile(watch){
         .pipe(rename('app.js'))
         .pipe(gulp.dest('public/js'))
     }
-    if (watch) {
-        bundle.on('update', () => {
-            console.log('---> Bundling... wait');
-            rebundle();
-        })
-    }
+
     rebundle();
 }
 
-gulp.task('build', () => { return compile(); });
+gulp.task('build', async () => { return compile();});
 
 gulp.task('watch', () => { return compile(true); });
 

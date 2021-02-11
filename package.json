@@ -21,10 +21,12 @@
     "axios": "^0.21.1",
     "empty-element": "^1.0.0",
     "express": "^4.17.1",
+    "file-extension": "^4.0.5",
     "intl": "^1.2.5",
     "intl-messageformat": "^9.4.6",
     "intl-relativeformat": "^6.4.3",
     "materialize-css": "^1.0.0",
+    "multer": "^1.4.2",
     "nodemon": "^2.0.7",
     "page": "^1.11.6",
     "pug": "^3.0.0",
@@ -32,8 +34,8 @@
     "yo-yo": "^1.4.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "gulp": "^4.0.2",

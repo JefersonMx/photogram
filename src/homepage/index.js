@@ -12,7 +12,6 @@ page('/', headerMidlew, loadAxiosPictures, (context, next) => {
     empty(main).appendChild(template(context.pictures));
 })
 
-
 function loadAxiosPictures(context, next){
   axios
     .get('/api/pictures')
@@ -24,6 +23,16 @@ function loadAxiosPictures(context, next){
       console.log(error)
     })
 }
+// async function asyncLoadPictures(context, next){
+//   try{
+//     context.pictures = await fetch('/api/pictures')
+//     .then (response => response.json())
+//     next()
+
+//   }catch(error){
+//     console.log(error);
+//   }
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');

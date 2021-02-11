@@ -112,3 +112,39 @@ body {
         display: none;
     }
 }
+.form-upload {
+    span, button {
+        color: var(--sixth-color);
+    }
+    .fileUpload {
+        position: relative;
+        overflow: hidden;
+        margin:10px;
+
+        input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            bottom: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        i {
+            margin-right: 5px;
+        }
+    }
+    .fileUpload:hover{
+        // transform: scale(1.01);
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+button#btnUpload:hover{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+button#btnCancel:hover{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
