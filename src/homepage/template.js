@@ -10,7 +10,7 @@ module.exports = function (pictures) {
                 <div class="row">
                     <div class="col s12 m10 offset-m1 l8 offset-l2 center-align">
                         <form id="form-upload" enctype="multipart/form-data" class="form-upload" onsubmit=${onsubmit}>
-                            <div id="fileName" class="fileUpload btn btn-flat cyan">
+                            <div id="fileName" class="fileUpload btn btn-flat teal">
                                 <span><i class="fas fa-camera"></i>${translate.message('upload-picture')}</span>
                                 <input name="picture" id="file" type="file" class="upload" onchange=${onchange}/>
                             </div>

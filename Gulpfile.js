@@ -5,6 +5,7 @@ var babel = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
+const Babelify = require('babelify');
 
 gulp.task('styles', () => {
     return gulp
@@ -32,7 +33,7 @@ function compile(watch){
     }
     function rebundle() {
         bundle
-        .transform(babel)
+        .transform(babel,{ "presets": ["@babel/preset-env"]} )
         .bundle()
         .on('error', function(err){console.log(err); this.emit('end') })
         .pipe(source('index.js'))

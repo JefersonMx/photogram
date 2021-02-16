@@ -27,34 +27,35 @@ app.get('/signup', function(req, res){
 app.get('/signin', function(req, res){
     res.render('index');
 })
+
 app.get('/api/pictures', function(req, res, next){
     var pictures =[
         {
           user: {
-              username: 'Jeferson',
-              avatar: 'https://cdn.discordapp.com/attachments/329445618026283008/805616282643988510/91fdc421f4e72b24962840e22f99871b.png',
+              username: 'Andrew',
+              avatar: 'https://images.unsplash.com/photo-1612277832417-7f3146075560?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
           },
-          url: 'https://cdn.discordapp.com/attachments/329445618026283008/805616282643988510/91fdc421f4e72b24962840e22f99871b.png',
+          url: 'https://images.unsplash.com/photo-1613402398192-8a354b291cf5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
           likes:0,
           liked: false,
           dateOfcreation: new Date().getTime()
         },
         {
             user: {
-                username: 'Jair',
+                username: 'Philip',
                 avatar: 'https://images.unsplash.com/photo-1611756674996-fc1b1ed07c9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
             },
-            url: 'https://cdn.discordapp.com/attachments/329445618026283008/805614769628643348/Screenshot_20210109-120023.png',
+            url: 'https://images.unsplash.com/photo-1589424690155-f91af53069e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
             likes: 222,
             liked: true,
             dateOfcreation: new Date().setDate(new Date().getDate())
           },
           {
             user: {
-                username: 'Andrés',
-                avatar: 'https://images.unsplash.com/photo-1610767540673-4ae1befdb182?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+                username: 'Jhonny',
+                avatar: 'https://images.unsplash.com/photo-1612462767092-1246df528494?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=80',
             },
-            url: 'https://scontent-bog1-1.xx.fbcdn.net/v/t1.0-9/15442299_1092783377505879_3385059318414204374_n.jpg?_nc_cat=106&ccb=2&_nc_sid=174925&_nc_eui2=AeHMvdMdgtgBUVoPIuQZM-yL2PS4QYsjnwrY9LhBiyOfCulGqxoCTieHbxm8mYDWtUZflovtbkOV4nFXJrB9LPWz&_nc_ohc=LiGD_3T3N6oAX8TIbgW&_nc_ht=scontent-bog1-1.xx&oh=5c1735bd3213131a215836d7d729aa56&oe=603E4792',
+            url: 'https://images.unsplash.com/photo-1612693624285-6e52c9012148?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=80',
             likes: 1,
             liked: true,
             dateOfcreation: new Date().getTime()
@@ -72,6 +73,50 @@ app.post('/api/pictures', function (req, res) {
       }
       res.send('File uploaded');
     })
+});
+
+app.get('/api/user/:usernam', function(req, res){
+  const user = {
+    username: "Andrew",
+    avatar: "https://images.unsplash.com/photo-1612277832417-7f3146075560?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    pictures: [
+      {
+        id: 1,
+        src: "https://images.unsplash.com/photo-1613055659399-722bb05dc34a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80",
+        likes: 3
+      },
+      {
+        id: 2,
+        src: "https://images.unsplash.com/photo-1613055532422-7392e55595ae?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=711&q=80",
+        likes: 1
+      },
+      {
+        id: 3,
+        src: "https://images.unsplash.com/photo-1613055531991-f25ea2600da1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=747&q=80",
+        likes: 10
+      },
+      {
+        id: 4,
+        src: "https://images.unsplash.com/photo-1613056342510-75a98eb3dbec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=738&q=80",
+        likes: 12
+      },
+      {
+        id: 5,
+        src: "https://images.unsplash.com/photo-1612983656730-465316d07420?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=715&q=80",
+        likes: 12
+      },
+      {
+        id: 6,
+        src: "https://images.unsplash.com/photo-1612360314811-633b736f22cf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=755&q=80",
+        likes: 12
+      },
+    ]
+  }
+  res.send(user);
+})
+
+app.get('/:username', function(req, res){
+  res.render('index');
 });
 
 app.listen(3000, function(err) {
