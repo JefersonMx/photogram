@@ -17114,7 +17114,7 @@ var axios = require('axios')["default"];
 
 var headerMidlew = require('../header');
 
-page('/', headerMidlew, loadAxiosPictures, function (context, next) {
+page('/', headerMidlew, loading, loadAxiosPictures, function (context, next) {
   document.title = 'Photogram';
   var main = document.getElementById('main-container');
   empty(main).appendChild(template(context.pictures));
@@ -17127,6 +17127,13 @@ function loadAxiosPictures(context, next) {
   })["catch"](function (error) {
     console.log(error);
   });
+}
+
+function loading(context, next) {
+  var loader = document.createElement('div');
+  loader.classList.add('loader');
+  var main = document.getElementById('main-container').appendChild(loader);
+  next();
 } // async function asyncLoadPictures(context, next){
 //   try{
 //     context.pictures = await fetch('/api/pictures')

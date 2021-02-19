@@ -5,7 +5,7 @@ var axios = require('axios').default;
 var headerMidlew = require('../header');
 
 
-page('/', headerMidlew, loadAxiosPictures, (context, next) => {
+page('/', headerMidlew, loading, loadAxiosPictures, (context, next) => {
     document.title = 'Photogram';
     var main = document.getElementById('main-container');
 
@@ -23,6 +23,15 @@ function loadAxiosPictures(context, next){
       console.log(error)
     })
 }
+
+function loading(context, next){
+  var  loader =  document.createElement('div');
+  loader.classList.add('loader');
+  var main = document.getElementById('main-container').appendChild(loader);
+  next()
+
+}
+
 // async function asyncLoadPictures(context, next){
 //   try{
 //     context.pictures = await fetch('/api/pictures')
