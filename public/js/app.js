@@ -17002,17 +17002,7 @@ module.exports = [
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17044,17 +17034,7 @@ module.exports = function pictureCard(pic) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17075,17 +17055,7 @@ document.body.appendChild(el);
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17155,17 +17125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17230,17 +17190,7 @@ page();
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17253,17 +17203,7 @@ module.exports = function landing(box) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17293,17 +17233,7 @@ page('/signin', function (context, next) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17334,17 +17264,7 @@ page('/signup', function (context, next) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -17452,13 +17372,15 @@ var _template = _interopRequireDefault(require("./template"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-(0, _page["default"])('/:username', _header["default"], loadUser, function (context, next) {
+(0, _page["default"])('/:username', loadUser, _header["default"], function (context, next) {
+  document.title = "Photogram - ".concat(context.params.username);
+  var main = document.getElementById('main-container');
+  (0, _emptyElement["default"])(main).appendChild((0, _template["default"])(context.user));
+  $('.materialboxed').materialbox();
+});
+(0, _page["default"])('/:username/:id', loadUser, _header["default"], function (context, next) {
   document.title = "Photogram - ".concat(context.params.username);
   var main = document.getElementById('main-container');
   (0, _emptyElement["default"])(main).appendChild((0, _template["default"])(context.user));
@@ -17476,40 +17398,23 @@ function loadUser(context, next) {
 },{"../header":77,"./template":91,"axios":3,"empty-element":33,"page":59}],91:[function(require,module,exports){
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = userProfile;
-
 var _yoYo = _interopRequireDefault(require("yo-yo"));
 
 var _layout = _interopRequireDefault(require("../layout"));
 
+var _translation = _interopRequireDefault(require("../translation"));
+
 var _templateObject, _templateObject2;
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
-
-function userProfile(user) {
+module.exports = function userProfile(user) {
   var el = (0, _yoYo["default"])(_templateObject || (_templateObject = _taggedTemplateLiteral(["<div class=\"container user-pofile\">\n      <div class=\"row\">\n         <div class=\"col s12 m10 offset-m1 l8 offset-l2 center-align heading\">\n            <div class=\"row\">\n               <div class=\"col s12 m10 offset-m1 l3 offset-l3 center\">\n                  <img src=\"", "\" class=\"responsive-img circle\"/>\n               </div>\n               <div class=\"col s12 m10 offset-m1 l6 left-align\">\n                  <h2 class=\"hide-on-large-only center-align\">", "</h2>\n                  <h2 class=\"hide-on-med-and-down left-align\">", "</h2>\n               </div>\n            </div>\n         </div>\n         <div class=\"row\">\n         ", "\n         </div>\n      </div>\n   </div>"])), user.avatar, user.username, user.username, user.pictures.map(function (picture) {
-    return (0, _yoYo["default"])(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["<div class=\"col s12 m6 l4\">\n            <div>\n               <div class=\"picture-container\">\n                  <img src=\"", "\" class=\"picture\"/>\n                  <div class=\"likes\"><i class=\"fas fa-heart\"></i>", "\n                  </div>\n               </div>\n            </div>\n            </div>"])), picture.src, picture.likes);
+    return (0, _yoYo["default"])(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["<div class=\"col s12 m6 l4\">\n               <div class=\"picture-container modal-trigger\">\n                  <img src=\"", "\" class=\"picture materialboxed\" data-caption=\"", " Likes\"/>\n                  <div class=\"likes\"><i class=\"fas fa-heart\"></i>", "</div>\n               </div>\n               <div id=\"modal", "\" class=\"modal modal-fixed-footer\">\n                  <div class=\"modal-content\">\n                     <img src=\"", "\"/>\n                  </div>\n                  <div class=\"modal-footer\">\n                     <div class=\"btn btn-flat likes\"><i class=\"fas fa-heart\"></i> ", "\n                     </div>\n                  </div>\n               </div>\n            </div>"])), picture.src, picture.likes, picture.likes, picture.id, picture.src, picture.likes);
   }));
   return (0, _layout["default"])(el);
-}
+};
 
-},{"../layout":82,"yo-yo":73}]},{},[80]);
+},{"../layout":82,"../translation":89,"yo-yo":73}]},{},[80]);

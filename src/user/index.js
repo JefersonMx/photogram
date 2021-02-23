@@ -4,12 +4,18 @@ import empty from 'empty-element'
 import template from './template'
 import axios from 'axios'
 
-page('/:username', header, loadUser, (context, next) => {
+page('/:username', loadUser, header, (context, next) => {
    document.title = `Photogram - ${context.params.username}`;
    var main = document.getElementById('main-container');
    empty(main).appendChild	(template(context.user))
+   $('.materialboxed').materialbox();
 })
 
+page('/:username/:id', loadUser, header, (context, next) => {
+  document.title = `Photogram - ${context.params.username}`;
+  var main = document.getElementById('main-container');
+  empty(main).appendChild	(template(context.user));
+})
 
 function loadUser(context, next){
    axios

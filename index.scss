@@ -154,7 +154,6 @@ button#btnCancel:hover{
 
     .picture-container {
         display: flex;
-        // align-items: center;
         justify-content: center;
         height: 400px;
         margin-bottom: 20px;
@@ -162,15 +161,9 @@ button#btnCancel:hover{
         background-size: cover;
         flex-wrap: wrap;
 
-        &:hover {
-          .picture {
-            filter: blur(3px);
-          }
-
-          .likes {
+        .likes {
             display: flex;
           }
-        }
 
         .picture {
           object-fit: cover;
@@ -192,7 +185,8 @@ button#btnCancel:hover{
           align-items: center;
           color: var(--second-color);
           font-size: 34px;
-          display: none
+          display: none;
+          z-index: 50;
         }
 
         .fas.fa-heart {
@@ -200,4 +194,27 @@ button#btnCancel:hover{
           display: inline-block;
         }
       }
+}
+.modal {
+    img{
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .fas.fa-heart{
+        display: inline-block;
+    }
+}
+.materialboxed {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+    background-size: cover;
+    flex-wrap: wrap;
+}
+.materialbox-caption {
+    color: var(--second-color);
+    bottom: 10px;
+    font-size: 20px;
 }
