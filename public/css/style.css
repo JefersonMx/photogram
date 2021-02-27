@@ -6696,7 +6696,7 @@ body {
 .card.liked .far.fa-heart {
   display: none; }
 
-.form-upload span, .form-upload button {
+.form-upload span, .form-upload button, .form-upload i {
   color: var(--sixth-color); }
 
 .form-upload .fileUpload {
@@ -6769,6 +6769,12 @@ button#btnCancel:hover {
 .modal .fas.fa-heart {
   display: inline-block; }
 
+.modal .my_camera {
+  margin: auto; }
+
+.modal .modal-footer.center-align {
+  text-align: center; }
+
 .materialboxed {
   display: flex;
   justify-content: center;
@@ -6782,3 +6788,20 @@ button#btnCancel:hover {
   color: var(--second-color);
   bottom: 10px;
   font-size: 20px; }
+
+.like-heart {
+  font-size: 45px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--seventh-color);
+  display: none;
+  transition: all .1s ease;
+  opacity: 0; }
+  .like-heart.liked {
+    color: var(--second-color);
+    font-size: 45px;
+    display: block;
+    transition: all .5s ease;
+    opacity: 1; }

@@ -20,7 +20,7 @@ module.exports = function userProfile(user) {
          ${user.pictures.map(function (picture) {
             return yo`<div class="col s12 m6 l4">
                <div class="picture-container modal-trigger">
-                  <img src="${picture.src}" class="picture materialboxed" data-caption="${picture.likes} Likes"/>
+                  <img src="${picture.src}" class="picture materialboxed" data-caption="${translate.message('likes', {likes : picture.likes})}"/>
                   <div class="likes"><i class="fas fa-heart"></i>${picture.likes}</div>
                </div>
                <div id="modal${picture.id}" class="modal modal-fixed-footer">
@@ -28,7 +28,7 @@ module.exports = function userProfile(user) {
                      <img src="${picture.src}"/>
                   </div>
                   <div class="modal-footer">
-                     <div class="btn btn-flat likes"><i class="fas fa-heart"></i> ${picture.likes}
+                     <div class="btn btn-flat likes"><i class="fas fa-heart"></i>${translate.message('likes', {likes : picture.likes})}
                      </div>
                   </div>
                </div>
