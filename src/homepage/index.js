@@ -21,7 +21,6 @@ page('/', headerMidlew, loading, loadAxiosPictures, (context, next) => {
 
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
-
 })
 
 function loadAxiosPictures(context, next){

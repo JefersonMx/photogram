@@ -18309,10 +18309,8 @@ module.exports = function (pictures) {
             avatar: 'https://images.unsplash.com/photo-1612277832417-7f3146075560?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
           }
         };
-        document.getElementById('pic_card').append(picture(pic));
+        document.getElementById('pic_card').prepend(picture(pic));
         reset();
-        var instance = M.Modal.getInstance(elems);
-        instance.close();
       });
     });
   }

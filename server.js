@@ -1,14 +1,32 @@
 var express = require('express');
 var multer = require('multer');
+var gcsSharp  = require('multer-sharp');
 var extension = require('file-extension');
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './picuploads')
-    },
-    filename: function (req, file, cb) {
-      cb(null, +Date.now() + '.' + extension(file.originalname))
-    }
-  })
+var firebase = require('firebase/app');
+var firebase_storage = require('firebase/storage');
+
+require('dotenv').config()
+
+const firebaseConfig = {
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESAGGING_SENDER_ID,
+  appId: process.env.APP_ID
+};;
+
+firebase.initializeApp(firebaseConfig);
+
+var storage = gcsSharp({
+  filename: (req, file, cb) => {
+    cb(null, +Date.now() + '.' + extension(file.originalname));
+  },
+  bucket: process.env.STORAGE_BUCKET,
+  projectId: process.env.PROJECT_ID,
+  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+  acl: 'publicRead',
+})
 
 var upload = multer({ storage: storage }).single('picture');
 
@@ -66,9 +84,9 @@ app.get('/api/pictures', function(req, res, next){
   });
 
 app.post('/api/pictures', function (req, res) {
-    upload(req, res, function (err) {
+     upload(req, res, function (err) {
       if (err) {
-        return res.send(500, "Error uploading file");
+        return res.status(500).send("Error uploading file");
       }
       res.send('File uploaded');
     })
