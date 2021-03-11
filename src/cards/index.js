@@ -1,7 +1,6 @@
 var yo = require('yo-yo');
 var translate = require('../translation');
 
-
 module.exports = function pictureCard(pic) {
     var el;
 

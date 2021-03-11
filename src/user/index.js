@@ -5,14 +5,14 @@ import template from './template'
 import axios from 'axios'
 
 page('/:username', loadUser, header, (context, next) => {
-   document.title = `Photogram - ${context.params.username}`;
+   document.title = `Picter - ${context.params.username}`;
    var main = document.getElementById('main-container');
    empty(main).appendChild	(template(context.user))
    $('.materialboxed').materialbox();
 })
 
 page('/:username/:id', loadUser, header, (context, next) => {
-  document.title = `Photogram - ${context.params.username}`;
+  document.title = `Picter - ${context.params.username}`;
   var main = document.getElementById('main-container');
   empty(main).appendChild	(template(context.user));
 })

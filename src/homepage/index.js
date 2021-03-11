@@ -7,7 +7,7 @@ const Webcam = require('webcamjs');
 
 
 page('/', headerMidlew, loading, loadAxiosPictures, (context, next) => {
-    document.title = 'Photogram';
+    document.title = 'Picter';
     var main = document.getElementById('main-container');
 
     empty(main).appendChild(template(context.pictures));
@@ -21,7 +21,6 @@ page('/', headerMidlew, loading, loadAxiosPictures, (context, next) => {
 
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
-
 })
 
 function loadAxiosPictures(context, next){

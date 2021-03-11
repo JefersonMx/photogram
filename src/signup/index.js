@@ -4,7 +4,7 @@ var template = require('./template');
 
 
 page('/signup', (context, next) => {
-    document.title = 'Photogram - Signup';
+    document.title = 'Picter - Signup';
     var main = document.getElementById('main-container');
     empty(main).appendChild(template);
 })

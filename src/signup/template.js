@@ -5,7 +5,7 @@ var translate = require('../translation');
 var signupForm = yo`<div class="col s12 m7">
                         <div class="row">
                             <div class="signup-box">
-                                <h1 class="photogram">Photogram</h1>
+                                <h1 class="picter">Picter</h1>
                                 <form action="" class="signup-form">
                                     <h2>${translate.message('signup.subheading')}</h2>
                                     <div class="section">

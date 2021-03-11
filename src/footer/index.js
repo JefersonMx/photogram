@@ -10,7 +10,7 @@ var el = yo `<footer class="site-footer">
             <li><a href="#" onclick=${idiom.bind(null,'en-US')}>${translate.message('english')}</a></li>
             </ul>
         </div>
-        <div class="col s12 l3 push-l6 center-align">Copygrith 2021 Photogram™</div>
+        <div class="col s12 l3 push-l6 center-align">Copygrith 2021 Picter</div>
         </div>
         </div>
     </footer>`;

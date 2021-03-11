@@ -7,7 +7,7 @@ var el = yo`<nav class="header">
     <div class="container">
         <div clas="row">
         <div class="col s12 m6">
-                <a href="/" class="brand-logo photogram col s12 m6">Photogram</a>
+                <a href="/" class="brand-logo picter col s12 m6">Picter</a>
             </div>
             <div class="col s2 m6 push-s10 right-align">
                 <a  class="dropdown-trigger btn btn-large btn-flat" href="#" data-target="dropdown-user">

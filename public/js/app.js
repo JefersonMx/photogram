@@ -18053,17 +18053,7 @@ module.exports = [
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18110,23 +18100,13 @@ module.exports = function pictureCard(pic) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
 var translate = require('../translation');
 
-var el = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<footer class=\"site-footer\">\n    <div class=\"container\">\n        <div class=\"row\">\n        <div class=\"col s12 l3 center-align\"><a class=\"dropdown-trigger btn btn-flat\" href=\"#\" data-target=\"dropdown1\">", "</a>\n            <ul class=\"dropdown-content\" id=\"dropdown1\">\n            <li><a href=\"#\" onclick=", ">", "</a></li>\n            <li><a href=\"#\" onclick=", ">", "</a></li>\n            </ul>\n        </div>\n        <div class=\"col s12 l3 push-l6 center-align\">Copygrith 2021 Photogram\u2122</div>\n        </div>\n        </div>\n    </footer>"])), translate.message('language'), idiom.bind(null, 'es'), translate.message('spanish'), idiom.bind(null, 'en-US'), translate.message('english'));
+var el = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<footer class=\"site-footer\">\n    <div class=\"container\">\n        <div class=\"row\">\n        <div class=\"col s12 l3 center-align\"><a class=\"dropdown-trigger btn btn-flat\" href=\"#\" data-target=\"dropdown1\">", "</a>\n            <ul class=\"dropdown-content\" id=\"dropdown1\">\n            <li><a href=\"#\" onclick=", ">", "</a></li>\n            <li><a href=\"#\" onclick=", ">", "</a></li>\n            </ul>\n        </div>\n        <div class=\"col s12 l3 push-l6 center-align\">Copygrith 2021 Picter</div>\n        </div>\n        </div>\n    </footer>"])), translate.message('language'), idiom.bind(null, 'es'), translate.message('spanish'), idiom.bind(null, 'en-US'), translate.message('english'));
 
 function idiom(locale) {
   localStorage.locale = locale;
@@ -18141,17 +18121,7 @@ document.body.appendChild(el);
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18159,7 +18129,7 @@ var translate = require('../translation');
 
 var empty = require('empty-element');
 
-var el = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<nav class=\"header\">\n<div class=\"nav-wrapper\">\n    <div class=\"container\">\n        <div clas=\"row\">\n        <div class=\"col s12 m6\">\n                <a href=\"/\" class=\"brand-logo photogram col s12 m6\">Photogram</a>\n            </div>\n            <div class=\"col s2 m6 push-s10 right-align\">\n                <a  class=\"dropdown-trigger btn btn-large btn-flat\" href=\"#\" data-target=\"dropdown-user\">\n                    <i class=\"fa fa-user\"></i>\n                </a>\n                <ul id=\"dropdown-user\" class=\"dropdown-content\">\n                    <li><a href=\"#!\">", "</a></li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>\n</nav>"])), translate.message('logout'));
+var el = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<nav class=\"header\">\n<div class=\"nav-wrapper\">\n    <div class=\"container\">\n        <div clas=\"row\">\n        <div class=\"col s12 m6\">\n                <a href=\"/\" class=\"brand-logo picter col s12 m6\">Picter</a>\n            </div>\n            <div class=\"col s2 m6 push-s10 right-align\">\n                <a  class=\"dropdown-trigger btn btn-large btn-flat\" href=\"#\" data-target=\"dropdown-user\">\n                    <i class=\"fa fa-user\"></i>\n                </a>\n                <ul id=\"dropdown-user\" class=\"dropdown-content\">\n                    <li><a href=\"#!\">", "</a></li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>\n</nav>"])), translate.message('logout'));
 
 module.exports = function headerMidlew(context, next) {
   var container = document.getElementById('header-container');
@@ -18183,7 +18153,7 @@ var headerMidlew = require('../header');
 var Webcam = require('webcamjs');
 
 page('/', headerMidlew, loading, loadAxiosPictures, function (context, next) {
-  document.title = 'Photogram';
+  document.title = 'Picter';
   var main = document.getElementById('main-container');
   empty(main).appendChild(template(context.pictures));
   Webcam.set({
@@ -18231,17 +18201,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18309,10 +18269,8 @@ module.exports = function (pictures) {
             avatar: 'https://images.unsplash.com/photo-1612277832417-7f3146075560?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
           }
         };
-        document.getElementById('pic_card').append(picture(pic));
+        document.getElementById('pic_card').prepend(picture(pic));
         reset();
-        var instance = M.Modal.getInstance(elems);
-        instance.close();
       });
     });
   }
@@ -18351,17 +18309,7 @@ page();
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18374,17 +18322,7 @@ module.exports = function landing(box) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18404,7 +18342,7 @@ var empty = require('empty-element');
 var template = require('./template');
 
 page('/signin', function (context, next) {
-  document.title = 'Photogram - Signin';
+  document.title = 'Picter - Signin';
   var main = document.getElementById('main-container');
   empty(main).appendChild(template);
 });
@@ -18414,17 +18352,7 @@ page('/signin', function (context, next) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18432,7 +18360,7 @@ var landing = require('../landing');
 
 var translate = require('../translation');
 
-var signinForm = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<div class=\"col s12 m7\">\n                        <div class=\"row\">\n                            <div class=\"signup-box\">\n                                <h1 class=\"photogram\">Photogram</h1>\n                                <form action=\"\" class=\"signup-form\">\n                                    <div class=\"section\">\n                                        <a href=\"\" class=\"btn btn-fb hide-on-small-only\">\n                                         <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                        <a href=\"\" class=\"btn btn-fb hide-on-med-and-up\">\n                                            <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                    </div>\n                                    <div class=\"divider\"></div>\n                                    <div class=\"section\">\n                                        <input type=\"text\" name=\"username\" placeholder=\"", "\">\n                                        <input type=\"password\" name=\"password\" placeholder=\"", "\">\n                                        <button class=\"btn waves-effect waves-light btn-signup\">", "</button>\n                                    </div>\n                                </form>\n                            </div>\n                        </div>\n                        <div class=\"row\">\n                            <div class=\"login-box\">\n                                ", "\n                                <a href=\"/signup\">", "</a>\n                            </div>\n                        </div>\n                    </div>"])), translate.message('signup.facebook'), translate.message('signup.facebook'), translate.message('username'), translate.message('password'), translate.message('signin'), translate.message('signin.not-have-account'), translate.message('signup.call-to-action'));
+var signinForm = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<div class=\"col s12 m7\">\n                        <div class=\"row\">\n                            <div class=\"signup-box\">\n                                <h1 class=\"picter\">Picter</h1>\n                                <form action=\"\" class=\"signup-form\">\n                                    <div class=\"section\">\n                                        <a href=\"\" class=\"btn btn-fb hide-on-small-only\">\n                                         <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                        <a href=\"\" class=\"btn btn-fb hide-on-med-and-up\">\n                                            <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                    </div>\n                                    <div class=\"divider\"></div>\n                                    <div class=\"section\">\n                                        <input type=\"text\" name=\"username\" placeholder=\"", "\">\n                                        <input type=\"password\" name=\"password\" placeholder=\"", "\">\n                                        <button class=\"btn waves-effect waves-light btn-signup\">", "</button>\n                                    </div>\n                                </form>\n                            </div>\n                        </div>\n                        <div class=\"row\">\n                            <div class=\"login-box\">\n                                ", "\n                                <a href=\"/signup\">", "</a>\n                            </div>\n                        </div>\n                    </div>"])), translate.message('signup.facebook'), translate.message('signup.facebook'), translate.message('username'), translate.message('password'), translate.message('signin'), translate.message('signin.not-have-account'), translate.message('signup.call-to-action'));
 module.exports = landing(signinForm);
 
 },{"../landing":82,"../translation":90,"yo-yo":74}],86:[function(require,module,exports){
@@ -18445,7 +18373,7 @@ var empty = require('empty-element');
 var template = require('./template');
 
 page('/signup', function (context, next) {
-  document.title = 'Photogram - Signup';
+  document.title = 'Picter - Signup';
   var main = document.getElementById('main-container');
   empty(main).appendChild(template);
 });
@@ -18455,17 +18383,7 @@ page('/signup', function (context, next) {
 
 var _templateObject;
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var yo = require('yo-yo');
 
@@ -18473,7 +18391,7 @@ var landing = require('../landing');
 
 var translate = require('../translation');
 
-var signupForm = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<div class=\"col s12 m7\">\n                        <div class=\"row\">\n                            <div class=\"signup-box\">\n                                <h1 class=\"photogram\">Photogram</h1>\n                                <form action=\"\" class=\"signup-form\">\n                                    <h2>", "</h2>\n                                    <div class=\"section\">\n                                        <a href=\"\" class=\"btn btn-fb hide-on-small-only\">\n                                            <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                        <a href=\"\" class=\"btn btn-fb hide-on-med-and-up\">\n                                            <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                    </div>\n                                    <div class=\"divider\"></div>\n                                    <div class=\"section\">\n                                        <input type=\"email\" name=\"email\" placeholder=\"", "\">\n                                        <input type=\"text\" name=\"name\" placeholder=\"", "\">\n                                        <input type=\"text\" name=\"username\" placeholder=\"", "\">\n                                        <input type=\"password\" name=\"password\" placeholder=\"", "\">\n                                        <button class=\"btn waves-effect waves-light btn-signup\">", "</button>\n                                    </div>\n                                </form>\n                            </div>\n                        </div>\n                        <div class=\"row\">\n                            <div class=\"login-box\">\n                                ", "\n                                <a href=\"/signin\">", "</a>\n                            </div>\n                        </div>\n                    </div>"])), translate.message('signup.subheading'), translate.message('signup.facebook'), translate.message('signup.facebook'), translate.message('email'), translate.message('fullname'), translate.message('username'), translate.message('password'), translate.message('signup.call-to-action'), translate.message('signup.have-account'), translate.message('signin'));
+var signupForm = yo(_templateObject || (_templateObject = _taggedTemplateLiteral(["<div class=\"col s12 m7\">\n                        <div class=\"row\">\n                            <div class=\"signup-box\">\n                                <h1 class=\"picter\">Picter</h1>\n                                <form action=\"\" class=\"signup-form\">\n                                    <h2>", "</h2>\n                                    <div class=\"section\">\n                                        <a href=\"\" class=\"btn btn-fb hide-on-small-only\">\n                                            <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                        <a href=\"\" class=\"btn btn-fb hide-on-med-and-up\">\n                                            <i class=\"fab fa-facebook-square\"></i> ", "\n                                        </a>\n                                    </div>\n                                    <div class=\"divider\"></div>\n                                    <div class=\"section\">\n                                        <input type=\"email\" name=\"email\" placeholder=\"", "\">\n                                        <input type=\"text\" name=\"name\" placeholder=\"", "\">\n                                        <input type=\"text\" name=\"username\" placeholder=\"", "\">\n                                        <input type=\"password\" name=\"password\" placeholder=\"", "\">\n                                        <button class=\"btn waves-effect waves-light btn-signup\">", "</button>\n                                    </div>\n                                </form>\n                            </div>\n                        </div>\n                        <div class=\"row\">\n                            <div class=\"login-box\">\n                                ", "\n                                <a href=\"/signin\">", "</a>\n                            </div>\n                        </div>\n                    </div>"])), translate.message('signup.subheading'), translate.message('signup.facebook'), translate.message('signup.facebook'), translate.message('email'), translate.message('fullname'), translate.message('username'), translate.message('password'), translate.message('signup.call-to-action'), translate.message('signup.have-account'), translate.message('signin'));
 module.exports = landing(signupForm);
 
 },{"../landing":82,"../translation":90,"yo-yo":74}],88:[function(require,module,exports){
@@ -18575,20 +18493,16 @@ var _template = _interopRequireDefault(require("./template"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 (0, _page["default"])('/:username', loadUser, _header["default"], function (context, next) {
-  document.title = "Photogram - ".concat(context.params.username);
+  document.title = "Picter - ".concat(context.params.username);
   var main = document.getElementById('main-container');
   (0, _emptyElement["default"])(main).appendChild((0, _template["default"])(context.user));
   $('.materialboxed').materialbox();
 });
 (0, _page["default"])('/:username/:id', loadUser, _header["default"], function (context, next) {
-  document.title = "Photogram - ".concat(context.params.username);
+  document.title = "Picter - ".concat(context.params.username);
   var main = document.getElementById('main-container');
   (0, _emptyElement["default"])(main).appendChild((0, _template["default"])(context.user));
 });
@@ -18613,23 +18527,9 @@ var _translation = _interopRequireDefault(require("../translation"));
 
 var _templateObject, _templateObject2;
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-}
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 module.exports = function userProfile(user) {
   var el = (0, _yoYo["default"])(_templateObject || (_templateObject = _taggedTemplateLiteral(["<div class=\"container user-pofile\">\n      <div class=\"row\">\n         <div class=\"col s12 m10 offset-m1 l8 offset-l2 center-align heading\">\n            <div class=\"row\">\n               <div class=\"col s12 m10 offset-m1 l3 offset-l3 center\">\n                  <img src=\"", "\" class=\"responsive-img circle\"/>\n               </div>\n               <div class=\"col s12 m10 offset-m1 l6 left-align\">\n                  <h2 class=\"hide-on-large-only center-align\">", "</h2>\n                  <h2 class=\"hide-on-med-and-down left-align\">", "</h2>\n               </div>\n            </div>\n         </div>\n         <div class=\"row\">\n         ", "\n         </div>\n      </div>\n   </div>"])), user.avatar, user.username, user.username, user.pictures.map(function (picture) {
