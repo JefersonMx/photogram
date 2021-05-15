@@ -6,7 +6,7 @@ var signupForm = yo`<div class="col s12 m7">
                         <div class="row">
                             <div class="signup-box">
                                 <h1 class="picter">Picter</h1>
-                                <form action="" class="signup-form">
+                                <form  class="signup-form" action="/signup" method="POST">
                                     <h2>${translate.message('signup.subheading')}</h2>
                                     <div class="section">
                                         <a href="" class="btn btn-fb hide-on-small-only">

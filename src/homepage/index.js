@@ -4,9 +4,10 @@ var template = require('./template');
 var axios = require('axios').default;
 var headerMidlew = require('../header');
 const Webcam = require('webcamjs');
+var utils = require('../utils');
 
 
-page('/', headerMidlew, loading, loadAxiosPictures, (context, next) => {
+page('/' ,headerMidlew, loading, loadAxiosPictures, (context, next) => {
     document.title = 'Picter';
     var main = document.getElementById('main-container');
 

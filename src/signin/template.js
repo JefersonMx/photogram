@@ -6,12 +6,12 @@ var signinForm = yo`<div class="col s12 m7">
                         <div class="row">
                             <div class="signup-box">
                                 <h1 class="picter">Picter</h1>
-                                <form action="" class="signup-form">
+                                <form action="/login" method="POST" class="signup-form">
                                     <div class="section">
-                                        <a href="" class="btn btn-fb hide-on-small-only">
+                                        <a href="/auth/facebook" rel="external" class="btn btn-fb hide-on-small-only">
                                          <i class="fab fa-facebook-square"></i> ${translate.message('signup.facebook')}
                                         </a>
-                                        <a href="" class="btn btn-fb hide-on-med-and-up">
+                                        <a href="/auth/facebook" rel="external" class="btn btn-fb hide-on-med-and-up">
                                             <i class="fab fa-facebook-square"></i> ${translate.message('signup.facebook')}
                                         </a>
                                     </div>

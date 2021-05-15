@@ -3,6 +3,7 @@ import header from '../header'
 import empty from 'empty-element'
 import template from './template'
 import axios from 'axios'
+import  utils from '../utils'
 
 page('/:username', loadUser, header, (context, next) => {
    document.title = `Picter - ${context.params.username}`;

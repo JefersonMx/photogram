@@ -1,11 +1,19 @@
 var express = require('express');
 var multer = require('multer');
 var gcsSharp  = require('multer-sharp');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var expressSession = require('express-session');
+var config = require('./config')
+var picterCli = require('picter-cli');
+var auth = require('./auth');
+var passport = require('passport');
 var extension = require('file-extension');
 var firebase = require('firebase/app');
 var firebase_storage = require('firebase/storage');
 
 require('dotenv').config()
+var client = picterCli.createClient(config.client);
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
@@ -32,9 +40,28 @@ var upload = multer({ storage: storage }).single('picture');
 
 var app = express();
 
+app.set(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(cookieParser());
+
+app.use(expressSession({
+   secret: process.env.PICTER_SECRET || 'picter',
+   resave: false,
+   saveUninitialized: false,
+}));
+app.use(passport.initialize());
+
+app.use(passport.session())
+
 app.set('view engine', 'pug');
 
 app.use(express.static('public'));
+
+passport.use(auth.localStrategy);
+passport.use(auth.facebookStrategy);
+passport.deserializeUser(auth.deserializeUser);
+passport.serializeUser(auth.serializeUser);
 
 app.get('/', function(req, res){
     res.render('index', { title: 'Picter'});
@@ -42,8 +69,47 @@ app.get('/', function(req, res){
 app.get('/signup', function(req, res){
     res.render('index');
 })
+app.post('/signup', function(req, res) {
+  var user = req.body;
+  client.saveUser(user, function(err, usr) {
+    if (err) return res.status(500).send(err.message);
+
+    res.redirect('/signin');
+  })
+})
 app.get('/signin', function(req, res){
     res.render('index');
+})
+
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+}));
+
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/')
+})
+
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }))
+
+app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+ }))
+
+function ensureAuth (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.status(401).send( { error: 'not authenticated' })
+}
+
+app.get('/whoami', function (req, res) {
+  if (req.isAuthenticated()) {
+    return console.log(res.json(req.user));
+
+  }
 })
 
 app.get('/api/pictures', function(req, res, next){
@@ -83,7 +149,7 @@ app.get('/api/pictures', function(req, res, next){
 
   });
 
-app.post('/api/pictures', function (req, res) {
+app.post('/api/pictures', ensureAuth, function (req, res) {
      upload(req, res, function (err) {
       if (err) {
         return res.status(500).send("Error uploading file");
@@ -139,7 +205,7 @@ app.get('/:username/:id', function(req, res){
   res.render('index');
 })
 
-app.listen(3000, function(err) {
+app.listen(5050, function(err) {
     if (err) return console.log('Sorry, error'), process.exit(1);
-    console.log("Escuchando en el puerto 3000");
+    console.log("Escuchando en el puerto 5050");
 })
